@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import ImageList from './ImageList'
+import ImageForm from './ImageForm'
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <div>
+        <div className="section">
+          <h1 className="title">
+            AIR Talk React serverless demo app
+          </h1>
+          <ImageForm />
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className="section">
+          <ImageList />
+        </div>
       </div>
     );
   }

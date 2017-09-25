@@ -29,7 +29,13 @@ Frontend
 
 ```
 npm run build
-aws s3 sync build/ s3://air-talk-react
+aws s3 sync build/ s3://#{BUCKET_NAME}
+```
+
+or
+
+```
+npm run deploy
 ```
 
 ### Demo

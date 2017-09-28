@@ -1,4 +1,7 @@
 ## AWS S3 + API Gateway + Lambda
+### Demo
+[http://air-talk-react.s3-website-us-west-2.amazonaws.com/](http://air-talk-react.s3-website-us-west-2.amazonaws.com/)
+
 ### Create app
 Frontend
 
@@ -37,6 +40,3 @@ or
 ```
 npm run deploy
 ```
-
-### Demo
-[http://air-talk-react.s3-website-us-east-1.amazonaws.com/](http://air-talk-react.s3-website-us-east-1.amazonaws.com/)

@@ -46,9 +46,11 @@ npm run deploy
 [http://air-talk-react-firebase.s3-website-us-west-2.amazonaws.com/](https://air-talk-react-firebase.firebaseapp.com)
 
 ### Create app
-
+- See [this article](https://www.codementor.io/yurio/all-you-need-is-react-firebase-4v7g9p4kf) to create your firebase app.
+- Set environment variables in `.env`
 ```
-firebase init
+REACT_APP_FIREBASE_API=your_api_key
+REACT_APP_FIREBASE_PROJECT_NAME=your_firebase_project_name
 ```
 
 ### Deploy

@@ -40,3 +40,19 @@ or
 ```
 npm run deploy
 ```
+
+## Firebase
+### Demo
+[http://air-talk-react-firebase.s3-website-us-west-2.amazonaws.com/](https://air-talk-react-firebase.firebaseapp.com)
+
+### Create app
+
+```
+firebase init
+```
+
+### Deploy
+
+```
+firebase deploy
+```

@@ -46,7 +46,7 @@ class App extends Component {
       <div>
         <div className="section">
           <h1 className="title">
-            AIR Talk React serverless demo app
+            AIR Talk React Serverless Demo
           </h1>
           <ImageForm onSubmit={this.addImage.bind(this)} url={this.state.url} />
         </div>

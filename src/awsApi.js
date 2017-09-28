@@ -1,4 +1,5 @@
-const endpoint = 'http://localhost:8080';
+const env = process.env;
+const endpoint = process.env.REACT_APP_API_ENDPOINT;
 
 export async function listImages() {
   const path = `${endpoint}/images`;

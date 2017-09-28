@@ -3,6 +3,7 @@ import { listImages, addImage, deleteImage } from './awsApi';
 import logo from './logo.svg';
 import Image from './Image';
 import ImageForm from './ImageForm';
+import fire from './fire';
 import './App.css';
 
 class App extends Component {
@@ -13,8 +14,16 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    listImages().then((images) => {
-      this.setState({ images: images });
+    const imagesRef = fire.database().ref('images');
+    imagesRef.on('child_added', (snapshot) => {
+      const image = { url: snapshot.val(), id: snapshot.key };
+      this.setState({ images: [image].concat(this.state.images) });
+    });
+    imagesRef.on('child_removed', (snapshot) => {
+      const id = snapshot.key;
+      this.setState(prevState => ({
+        images: prevState.images.filter(image => image.id != id)
+      }));
     });
   }
 
@@ -26,19 +35,11 @@ class App extends Component {
   }
 
   async addImage(url) {
-    addImage(url).then((image) => {
-      this.setState(prevState => ({
-        images: prevState.images.concat(image),
-      }));
-    });
+    fire.database().ref('images').push(url);
   }
 
   async deleteImage(id) {
-    deleteImage(id).then(() => {
-      this.setState(prevState => ({
-        images: prevState.images.filter(image => image.id != id)
-      }));
-    });
+    fire.database().ref(`images/${id}`).remove();
   }
 
   render() {

@@ -1,4 +1,3 @@
-const env = process.env;
 const endpoint = process.env.REACT_APP_API_ENDPOINT;
 
 export async function listImages() {

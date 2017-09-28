@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "aws-sdk": "^2.123.0",
+    "firebase": "^4.4.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-scripts": "1.0.13"
@@ -14,7 +15,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "predeploy": "npm run build",
-    "deploy": "aws s3 sync build/ s3://air-talk-react",
+    "deploy": "firebase deploy",
     "eject": "react-scripts eject"
   }
 }
